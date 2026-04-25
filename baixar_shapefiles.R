@@ -12,3 +12,12 @@ library(geobr)
 library(tidyverse)
 
 library(sf)
+
+# Shapefiles ----
+
+## Brasil ----
+
+### Importar ----
+
+br <- geobr::read_state(year = 2019)
+
