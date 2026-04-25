@@ -74,3 +74,10 @@ biomas |> sf::st_write("biomas.shp")
 
 recife <- geobr::read_municipality() |>
   dplyr::filter(name_muni == "Recife")
+
+### Visualizar ----
+
+recife
+
+ggplot() +
+  geom_sf(data = recife, color = "black")
