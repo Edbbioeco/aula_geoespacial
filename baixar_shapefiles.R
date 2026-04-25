@@ -27,3 +27,7 @@ br
 
 ggplot() +
   geom_sf(data = br, color = "black")
+
+### Exportar -----
+
+br |> sf::st_write("br.shp")
