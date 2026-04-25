@@ -49,3 +49,9 @@ ggplot() +
 ### Exportar ----
 
 regioes |> sf::st_write("regioes.shp")
+
+## Biomas ----
+
+### Importar ----
+
+biomas <- geobr::read_biomes(year = 2019)
