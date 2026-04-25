@@ -58,7 +58,7 @@ biomas <- geobr::read_biomes(year = 2019)
 
 ### Visualizar ----
 
-regioes
+biomas
 
 ggplot() +
   geom_sf(data = biomas, aes(color = name_biome, fill = name_biome)) +
