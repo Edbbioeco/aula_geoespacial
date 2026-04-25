@@ -9,3 +9,7 @@ usethis::use_git()
 # Criar o repositório ----
 
 usethis::use_github()
+
+# Criar README -----
+
+usethis::use_readme_md()
