@@ -67,3 +67,10 @@ ggplot() +
 ### Exportar ----
 
 biomas |> sf::st_write("biomas.shp")
+
+## Shapefilede Recife ----
+
+### Importar ----
+
+recife <- geobr::read_municipality() |>
+  dplyr::filter(name_muni == "Recife")
