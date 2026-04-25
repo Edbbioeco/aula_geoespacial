@@ -55,3 +55,11 @@ regioes |> sf::st_write("regioes.shp")
 ### Importar ----
 
 biomas <- geobr::read_biomes(year = 2019)
+
+### Visualizar ----
+
+regioes
+
+ggplot() +
+  geom_sf(data = biomas, aes(color = name_biome, fill = name_biome)) +
+  geom_sf(data = br, color = "black", fill= "transparent")
