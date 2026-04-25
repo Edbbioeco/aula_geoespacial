@@ -43,8 +43,8 @@ regioes <- geobr::read_region(year = 2019)
 regioes
 
 ggplot() +
-  geom_sf(data = br, color = "black") +
-  geom_sf(data = regioes, aes(color = name_region, fill = name_region), alpha = 0.3)
+  geom_sf(data = regioes, aes(color = name_region, fill = name_region)) +
+  geom_sf(data = br, color = "black", fill= "transparent")
 
 ### Exportar ----
 
