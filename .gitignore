@@ -5,3 +5,8 @@
 .DS_Store
 .quarto
 .positai
+*.shp
+*.shx
+*.dbf
+*.prj
+*.png
