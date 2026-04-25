@@ -37,3 +37,12 @@ br |> sf::st_write("br.shp")
 ### Importar ----
 
 regioes <- geobr::read_region(year = 2019)
+
+### Visualizar ----
+
+regioes
+
+ggplot() +
+  geom_sf(data = br, color = "black") +
+  geom_sf(data = regioes, aes(color = name_region, fill = name_region), alpha = 0.3)
+
