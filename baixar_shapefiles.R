@@ -81,3 +81,7 @@ recife
 
 ggplot() +
   geom_sf(data = recife, color = "black")
+
+### Exportar ----
+
+recife |> sf::st_write("recife.shp")
