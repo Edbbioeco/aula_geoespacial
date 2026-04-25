@@ -63,3 +63,7 @@ biomas
 ggplot() +
   geom_sf(data = biomas, aes(color = name_biome, fill = name_biome)) +
   geom_sf(data = br, color = "black", fill= "transparent")
+
+### Exportar ----
+
+biomas |> sf::st_write("biomas.shp")
