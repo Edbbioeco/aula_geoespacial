@@ -31,3 +31,9 @@ ggplot() +
 ### Exportar -----
 
 br |> sf::st_write("br.shp")
+
+## Regiões ----
+
+### Importar ----
+
+regioes <- geobr::read_region(year = 2019)
