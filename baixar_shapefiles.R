@@ -46,3 +46,6 @@ ggplot() +
   geom_sf(data = br, color = "black") +
   geom_sf(data = regioes, aes(color = name_region, fill = name_region), alpha = 0.3)
 
+### Exportar ----
+
+regioes |> sf::st_write("regioes.shp")
