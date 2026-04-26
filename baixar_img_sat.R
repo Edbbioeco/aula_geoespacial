@@ -22,3 +22,11 @@ rec
 
 ggplot() +
   geom_sf(data = rec, color = "black")
+
+# Imagem de satélite ----
+
+## Baixar ----
+
+rec_sat <- rec |>
+  maptiles::get_tiles(provider = "Esri.WorldImagery",
+                      zoom = 14)
