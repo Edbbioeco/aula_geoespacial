@@ -15,3 +15,10 @@ library(terra)
 ## Importar ----
 
 rec <- sf::st_read("recife.shp")
+
+## Visualizar ----
+
+rec
+
+ggplot() +
+  geom_sf(data = rec, color = "black")
