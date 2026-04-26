@@ -30,3 +30,19 @@ br
 
 ggplot() +
   geom_sf(data = br, color = "black")
+
+## Shapefile das regiões ----
+
+### Importar ----
+
+regioes <- sf::st_read("regioes.shp")
+
+### Visualizar ----
+
+regioes
+
+ggplot() +
+  geom_sf(data = regioes,
+          aes(fill = nam_rgn),
+          color = "black") +
+  geom_sf(data = br, color = "black", fill = "transparent")
