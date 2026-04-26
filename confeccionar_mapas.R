@@ -95,3 +95,46 @@ ggplot() +
 ## Descrição ----
 
 # mapa dos biomas que ocorrem no Nordeste
+
+## Recortar os biomas apaenas para o Nordeste -----
+
+biomas_ne <- biomas |>
+  sf::st_intersection(regioes |>
+                        dplyr::filter(nam_rgn == "Nordeste"))
+
+biomas_ne
+
+ggplot() +
+  geom_sf(data = biomas_ne, aes(fill = name_biome, color = name_biome))
+
+## Confeccionar mapa ----
+
+mapa1 <- ggplot() +
+  geom_sf(data = br) +
+  geom_sf(data = biomas_ne, aes(fill = name_biome, color = name_biome)) +
+  geom_sf(data = br, color = "black", fill = "transparent", linewidth = 1) +
+  scale_fill_manual(values = c("darkgreen",
+                               "goldenrod",
+                               "orange4",
+                               "forestgreen",
+                               "royalblue"),
+                    name = "Bioma") +
+  scale_color_manual(values = c("darkgreen",
+                                "goldenrod",
+                                "orange4",
+                                "forestgreen",
+                                "royalblue"),
+                     name = "Bioma") +
+  ggspatial::annotation_scale(text_cex = 2.5,
+                              location = "br",
+                              bar_cols = c("black", "gold"),
+                              line_width = 2,
+                              height = unit(0.5, "cm"),
+                              width_hint = 0.1) +
+  theme_minimal() +
+  theme(axis.text = element_text(color = "black", size = 17.5),
+        legend.text = element_text(color = "black", size = 17.5),
+        legend.title = element_text(color = "black", size = 17.5)) +
+  ggview::canvas(height = 10, width = 12)
+
+mapa1
