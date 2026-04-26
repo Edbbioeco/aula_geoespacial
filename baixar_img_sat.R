@@ -29,7 +29,7 @@ ggplot() +
 
 rec_sat <- rec |>
   maptiles::get_tiles(provider = "Esri.WorldImagery",
-                      zoom = 14)
+                      zoom = 15)
 
 ## Visualizar ----
 
