@@ -89,3 +89,9 @@ ggplot() +
   tidyterra::geom_spatraster_rgb(data = rec_sat) +
   geom_sf(data = rec, color = "red", fill = "transparent", linewidth = 1) +
   coord_sf(expand = FALSE)
+
+# Mapa 1 ----
+
+## Descrição ----
+
+# mapa dos biomas que ocorrem no Nordeste
