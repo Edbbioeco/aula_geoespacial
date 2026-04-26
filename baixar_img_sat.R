@@ -39,3 +39,7 @@ ggplot() +
   tidyterra::geom_spatraster_rgb(data = rec_sat) +
   geom_sf(data = rec, color = "red", fill = "transparent", linewidth = 1) +
   coord_sf(expand = FALSE)
+
+## Exportar ----
+
+rec_sat |> terra::writeRaster(filename = "recife_img_sat.tif")
