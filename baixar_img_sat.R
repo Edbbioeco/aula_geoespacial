@@ -10,3 +10,8 @@ library(tidyterra)
 
 library(terra)
 
+# Dados ----
+
+## Importar ----
+
+rec <- sf::st_read("recife.shp")
