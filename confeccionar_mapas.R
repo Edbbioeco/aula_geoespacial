@@ -74,3 +74,18 @@ rec
 
 ggplot() +
   geom_sf(data = rec, color = "black")
+
+## Imagem de satélite de Recife ----
+
+### Importar ----
+
+rec_sat <- terra::rast("recife_img_sat.tif")
+
+### Visualizar ----
+
+rec_sat
+
+ggplot() +
+  tidyterra::geom_spatraster_rgb(data = rec_sat) +
+  geom_sf(data = rec, color = "red", fill = "transparent", linewidth = 1) +
+  coord_sf(expand = FALSE)
