@@ -99,3 +99,7 @@ u_c
 
 ggplot() +
   geom_sf(data = u_c)
+
+### Exportar ----
+
+u_c |> sf::st_write("unidade_conservacao.shp")
