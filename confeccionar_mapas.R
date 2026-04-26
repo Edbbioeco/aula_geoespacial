@@ -46,3 +46,18 @@ ggplot() +
           aes(fill = nam_rgn),
           color = "black") +
   geom_sf(data = br, color = "black", fill = "transparent")
+
+## Shapefile dos biomas ----
+
+### Importar ----
+
+biomas <- sf::st_read("biomas.shp")
+
+### Visualizar ----
+
+biomas
+
+ggplot() +
+  geom_sf(data = biomas,
+          aes(color = name_biome, fill = name_biome)) +
+  geom_sf(data = br, color = "black", fill = "transparent")
