@@ -61,3 +61,16 @@ ggplot() +
   geom_sf(data = biomas,
           aes(color = name_biome, fill = name_biome)) +
   geom_sf(data = br, color = "black", fill = "transparent")
+
+## Shapefile de Recife ----
+
+### Importar ----
+
+rec <- sf::st_read("recife.shp")
+
+### Visualizar ----
+
+rec
+
+ggplot() +
+  geom_sf(data = rec, color = "black")
