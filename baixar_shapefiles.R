@@ -85,21 +85,3 @@ ggplot() +
 ### Exportar ----
 
 recife |> sf::st_write("recife.shp")
-
-### Shapefile das unidades de cpnservação ----
-
-### Importar -----
-
-u_c <- geobr::read_conservation_units() |>
-  sf::st_make_valid()
-
-### Visualizar ----
-
-u_c
-
-ggplot() +
-  geom_sf(data = u_c)
-
-### Exportar ----
-
-u_c |> sf::st_write("unidade_conservacao.shp")
