@@ -196,6 +196,12 @@ mapa1 <- ggplot() +
 
 mapa1
 
+## Exportar -----
+
+mapa1
+
+ggsave(filename = "mapa1.png", height = 10, width = 12)
+
 # Mapa 2 ----
 
 ## Descrição ----
@@ -299,7 +305,15 @@ mapa2_2
 
 ### Unir os mapas ----
 
-(mapa2_1 + mapa2_2) +
+mapa2 <- (mapa2_1 + mapa2_2) +
   patchwork::plot_layout(guides = "collect") &
   theme(legend.position = "bottom") &
   ggview::canvas(height = 10, width = 12)
+
+mapa2
+
+### Exportar -----
+
+mapa2
+
+ggsave(filename = "mapa2.png", height = 10, width = 12)
