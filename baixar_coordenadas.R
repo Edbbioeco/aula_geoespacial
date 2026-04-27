@@ -16,3 +16,9 @@ occ <- rgbif::occ_search(scientificName = "Scinax x-signatus",
                          country = "BR",
                          hasCoordinate = TRUE,
                          limit = 50000)
+
+## Data frame de registros -----
+
+registros <- occ$data
+
+registros
