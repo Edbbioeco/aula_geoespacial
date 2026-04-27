@@ -8,6 +8,8 @@ library(terra)
 
 library(tidyterra)
 
+library(readxl)
+
 library(ggspatial)
 
 library(ggview)
