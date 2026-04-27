@@ -218,22 +218,25 @@ ggplot() +
 ### Mapa 2.1 ----
 
 mapa2_1 <- ggplot(data = br) +
-  geom_sf(aes(fill = "Brasil"),
+  geom_sf(aes(color = "Brasil",
+              fill = "Brasil"),
           linewidth = 0.5) +
   geom_sf(data = br |>
             dplyr::filter(nam_stt == "Pernambuco"),
-          aes(fill = "Pernambuco"),
+          aes(color = "Pernambuco",
+              fill = "Pernambuco"),
           linewidth = 0.5) +
   geom_sf(data = rec,
-          aes(color = "Recife"),
-          fill = "transparent",
+          aes(color = "Recife",
+              fill = "Recife"),
           linewidth = 0.75) +
   coord_sf(label_graticule = "NSW") +
-  scale_fill_manual(values = c("Brasil" = "gray",
+  scale_fill_manual(values = c("Recife" = "transparent",
+                               "Brasil" = "gray",
                                "Pernambuco" = "goldenrod")) +
-  scale_color_manual(values = c("Recife" = "red")) +
-  guides(fill = guide_legend(order = 1),
-         color = guide_legend(order = 2)) +
+  scale_color_manual(values = c("Recife" = "red",
+                                "Brasil" = "black",
+                                "Pernambuco" = "black")) +
   labs(fill = NULL,
        color = NULL) +
   ggmagnify::geom_magnify(from = c(-35.0167,
@@ -264,7 +267,7 @@ mapa2_2 <- ggplot() +
   tidyterra::geom_spatraster_rgb(data = rec_sat) +
   geom_sf(data = rec,
           aes(color = "Recife",
-          fill = "Recife"),
+              fill = "Recife"),
           linewidth = 0.75) +
   geom_sf(data = uni_con_ne,
           aes(color = "Unidades de Conservação",
