@@ -12,6 +12,8 @@ library(readxl)
 
 library(ggspatial)
 
+library(ggtext)
+
 library(ggview)
 
 library(ggmagnify)
