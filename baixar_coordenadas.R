@@ -8,11 +8,11 @@ library(writexl)
 
 ## TaxonKey ----
 
-rgbif::name_backbone("Scinax x-signatus")
+rgbif::name_backbone("Rhinella diptycha")
 
 ## Baixar coordenadas ----
 
-occ <- rgbif::occ_search(scientificName = "Scinax x-signatus",
+occ <- rgbif::occ_search(scientificName = "Rhinella diptycha",
                          country = "BR",
                          hasCoordinate = TRUE,
                          limit = 50000)
