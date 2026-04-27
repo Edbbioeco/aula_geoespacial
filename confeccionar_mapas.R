@@ -181,3 +181,9 @@ mapa1 <- ggplot() +
   ggview::canvas(height = 10, width = 12)
 
 mapa1
+
+# Mapa 2 ----
+
+## Descrição ----
+
+# mapa de localização das unidades de conservação em Refice
