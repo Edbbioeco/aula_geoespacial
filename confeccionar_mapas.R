@@ -121,7 +121,7 @@ ggplot() +
 
 ## Descrição ----
 
-# mapa dos biomas que ocorrem no Nordeste
+# mapa dos biomas que ocorrem no Nordeste e os seus registros de Rhinella diptyvha
 
 ## Recortar os biomas apaenas para o Nordeste -----
 
