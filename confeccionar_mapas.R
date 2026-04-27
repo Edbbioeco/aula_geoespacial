@@ -98,6 +98,12 @@ ggplot() +
 
 coord <- readxl::read_xlsx("coordenadas_registros.xlsx")
 
+### Visualizar ----
+
+coord
+
+coord |> dplyr::glimpse()
+
 # Mapa 1 ----
 
 ## Descrição ----
