@@ -92,6 +92,12 @@ ggplot() +
   geom_sf(data = rec, color = "red", fill = "transparent", linewidth = 1) +
   coord_sf(expand = FALSE)
 
+## Coordenadas de registros ----
+
+### Importar ----
+
+coord <- readxl::read_xlsx("coordenadas_registros.xlsx")
+
 # Mapa 1 ----
 
 ## Descrição ----
