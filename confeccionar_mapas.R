@@ -79,6 +79,12 @@ rec
 ggplot() +
   geom_sf(data = rec, color = "black")
 
+## Shapefile das unidades de conservação ----
+
+### Importar ----
+
+uni_con <- sf::st_read("unidade_conservacao.shp")
+
 ## Imagem de satélite de Recife ----
 
 ### Importar ----
