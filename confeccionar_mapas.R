@@ -227,7 +227,7 @@ mapa2_1 <- ggplot(data = br) +
   geom_sf(data = rec,
           aes(color = "Recife"),
           fill = "transparent",
-          linewidth = 0.5) +
+          linewidth = 0.75) +
   coord_sf(label_graticule = "NSW") +
   scale_fill_manual(values = c("Brasil" = "gray",
                                "Pernambuco" = "goldenrod")) +
