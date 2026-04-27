@@ -286,7 +286,7 @@ mapa2_2 <- ggplot() +
                               line_width = 2,
                               height = unit(0.5, "cm"),
                               width_hint = 0.25) +
-  scale_x_continuous(breaks = seq(-35.02, -34.85, 0.05)) +
+  scale_x_continuous(breaks = seq(-35, -34.85, 0.05)) +
   theme_minimal() +
   theme(axis.text = element_text(color = "black", size = 17.5),
         legend.text = element_text(color = "black", size = 17.5),
