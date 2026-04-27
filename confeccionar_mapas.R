@@ -152,7 +152,7 @@ ggplot() +
 mapa1 <- ggplot() +
   geom_sf(data = br) +
   geom_sf(data = biomas_ne, aes(fill = name_biome, color = name_biome)) +
-  geom_sf(data = coord_sf_ne, color = "orangered", alpha = 0.3) +
+  geom_sf(data = coord_sf_ne, color = "orangered", stroke = 1, alpha = 0.3) +
   geom_sf(data = br, color = "black", fill = "transparent", linewidth = 0.5) +
   scale_fill_manual(values = c("darkgreen",
                                "goldenrod",
