@@ -170,10 +170,12 @@ mapa1 <- ggplot() +
                               line_width = 2,
                               height = unit(0.5, "cm"),
                               width_hint = 0.1) +
+  labs(title = "Registros de <i>Rhinella diptycha</i> ao longo dos Biomas do Nordeste") +
   theme_minimal() +
   theme(axis.text = element_text(color = "black", size = 17.5),
         legend.text = element_text(color = "black", size = 17.5),
-        legend.title = element_text(color = "black", size = 17.5)) +
+        legend.title = element_text(color = "black", size = 17.5),
+        plot.title = ggtext::element_markdown(color = "black", size = 17.5)) +
   ggview::canvas(height = 10, width = 12)
 
 mapa1
