@@ -134,6 +134,17 @@ biomas_ne
 ggplot() +
   geom_sf(data = biomas_ne, aes(fill = name_biome, color = name_biome))
 
+## Recortar as coordenadas apenas para o Nordeste ----
+
+coord_sf_ne <- coord_sf |>
+  sf::st_intersection(regioes |>
+                        dplyr::filter(nam_rgn == "Nordeste"))
+
+coord_sf_ne
+
+ggplot() +
+  geom_sf(data = coord_sf_ne)
+
 ## Confeccionar mapa ----
 
 mapa1 <- ggplot() +
