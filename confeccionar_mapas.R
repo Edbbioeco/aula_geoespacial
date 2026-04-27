@@ -257,3 +257,41 @@ mapa2_1 <- ggplot(data = br) +
   ggview::canvas(height = 10, width = 12)
 
 mapa2_1
+
+### Mapa 2,2 -----
+
+mapa2_2 <- ggplot() +
+  tidyterra::geom_spatraster_rgb(data = rec_sat) +
+  geom_sf(data = rec,
+          aes(color = "Recife",
+          fill = "Recife"),
+          linewidth = 0.75) +
+  geom_sf(data = uni_con_ne,
+          aes(color = "Unidades de Conservação",
+              fill = "Unidades de Conservação"),
+          linewidth = 0.75,
+          alpha = 0.3) +
+  coord_sf(label_graticule = "NSE",
+           expand = FALSE) +
+  scale_fill_manual(values = c("Recife" = "transparent",
+                               "Unidades de Conservação" = "goldenrod")) +
+  scale_color_manual(values = c("Recife" = "red",
+                                "Unidades de Conservação" = "goldenrod")) +
+  labs(fill = NULL,
+       colour = NULL) +
+  ggspatial::annotation_scale(text_cex = 2.5,
+                              text_col = "gold",
+                              location = "br",
+                              bar_cols = c("black", "gold"),
+                              line_width = 2,
+                              height = unit(0.5, "cm"),
+                              width_hint = 0.25) +
+  scale_x_continuous(breaks = seq(-35.02, -34.85, 0.05)) +
+  theme_minimal() +
+  theme(axis.text = element_text(color = "black", size = 17.5),
+        legend.text = element_text(color = "black", size = 17.5),
+        legend.title = element_text(color = "black", size = 17.5),
+        legend.position = "bottom") +
+  ggview::canvas(height = 10, width = 12)
+
+mapa2_2
