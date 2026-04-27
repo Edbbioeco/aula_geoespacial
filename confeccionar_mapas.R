@@ -295,3 +295,8 @@ mapa2_2 <- ggplot() +
   ggview::canvas(height = 10, width = 12)
 
 mapa2_2
+
+### Unir os mapas ----
+
+(mapa2_1 + mapa2_2) +
+  ggview::canvas(height = 10, width = 12)
