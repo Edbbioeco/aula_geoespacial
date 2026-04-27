@@ -22,3 +22,7 @@ occ <- rgbif::occ_search(scientificName = "Rhinella diptycha",
 registros <- occ$data
 
 registros
+
+## Exportar os registros ----
+
+registros |> writexl::write_xlsx("coordenadas_registros.xlsx")
