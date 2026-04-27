@@ -85,6 +85,14 @@ ggplot() +
 
 uni_con <- sf::st_read("unidade_conservacao.shp")
 
+### Visualizar ----
+
+uni_con
+
+ggplot() +
+  geom_sf(data = br, color = "black") +
+  geom_sf(data = uni_con, color = "forestgreen")
+
 ## Imagem de satélite de Recife ----
 
 ### Importar ----
