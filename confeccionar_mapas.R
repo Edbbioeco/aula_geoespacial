@@ -266,8 +266,8 @@ mapa2_1
 mapa2_2 <- ggplot() +
   tidyterra::geom_spatraster_rgb(data = rec_sat) +
   geom_sf(data = rec,
-          aes(color = "Recife",
-              fill = "Recife"),
+          color = "red",
+          fill = "transparent",
           linewidth = 0.75) +
   geom_sf(data = uni_con_ne,
           aes(color = "Unidades de Conservação",
@@ -276,10 +276,8 @@ mapa2_2 <- ggplot() +
           alpha = 0.3) +
   coord_sf(label_graticule = "NSE",
            expand = FALSE) +
-  scale_fill_manual(values = c("Recife" = "transparent",
-                               "Unidades de Conservação" = "goldenrod")) +
-  scale_color_manual(values = c("Recife" = "red",
-                                "Unidades de Conservação" = "goldenrod")) +
+  scale_fill_manual(values = c("Unidades de Conservação" = "goldenrod")) +
+  scale_color_manual(values = c("Unidades de Conservação" = "goldenrod")) +
   labs(fill = NULL,
        colour = NULL) +
   ggspatial::annotation_scale(text_cex = 2.5,
@@ -302,6 +300,6 @@ mapa2_2
 ### Unir os mapas ----
 
 (mapa2_1 + mapa2_2) +
-  plot_layout(guides = "collect") &
+  patchwork::plot_layout(guides = "collect") &
   theme(legend.position = "bottom") &
   ggview::canvas(height = 10, width = 12)
