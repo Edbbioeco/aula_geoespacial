@@ -104,6 +104,19 @@ coord
 
 coord |> dplyr::glimpse()
 
+### Transformar em shapefile ----
+
+coord_sf <- coord |>
+  dplyr::select(decimalLongitude, decimalLatitude) |>
+  sf::st_as_sf(coords = c("decimalLongitude", "decimalLatitude"),
+               crs = regioes |> sf::st_crs())
+
+coord_sf
+
+ggplot() +
+  geom_sf(data = br, color = "black") +
+  geom_sf(data = coord_sf)
+
 # Mapa 1 ----
 
 ## Descrição ----
