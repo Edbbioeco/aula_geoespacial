@@ -201,3 +201,59 @@ mapa1
 ## Descrição ----
 
 # mapa de localização das unidades de conservação em Refice
+
+## Recortar o shapefile das unidades de conservação apenas para Recife ----
+
+uni_con_ne <- uni_con |>
+  sf::st_intersection(rec)
+
+uni_con_ne
+
+ggplot() +
+  geom_sf(data = rec) +
+  geom_sf(data = uni_con_ne)
+
+## Confeccionar mapa ----
+
+### Mapa 2.1 ----
+
+mapa2_1 <- ggplot(data = br) +
+  geom_sf(aes(fill = "Brasil"),
+          linewidth = 0.5) +
+  geom_sf(data = br |>
+            dplyr::filter(nam_stt == "Pernambuco"),
+          aes(fill = "Pernambuco"),
+          linewidth = 0.5) +
+  geom_sf(data = rec,
+          aes(color = "Recife"),
+          fill = "transparent",
+          linewidth = 0.5) +
+  coord_sf(label_graticule = "NSW") +
+  scale_fill_manual(values = c("Brasil" = "gray",
+                               "Pernambuco" = "goldenrod")) +
+  scale_color_manual(values = c("Recife" = "red")) +
+  guides(fill = guide_legend(order = 1),
+         color = guide_legend(order = 2)) +
+  labs(fill = NULL,
+       color = NULL) +
+  ggmagnify::geom_magnify(from = c(-35.0167,
+                                   -34.86058,
+                                   -8.155123,
+                                   -7.929206),
+                          to = c(-35.0167 - 5,
+                                 -34.86058 + 5,
+                                 -32.5,
+                                 -20),
+                          shape = "rect",
+                          recompute = TRUE,
+                          shadow = TRUE,
+                          linewidth = 0.8,
+                          expand = FALSE) +
+  theme_minimal() +
+  theme(axis.text = element_text(color = "black", size = 17.5),
+        legend.text = element_text(color = "black", size = 17.5),
+        legend.title = element_text(color = "black", size = 17.5),
+        legend.position = "bottom") +
+  ggview::canvas(height = 10, width = 12)
+
+mapa2_1
