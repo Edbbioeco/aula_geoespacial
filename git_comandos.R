@@ -9,12 +9,12 @@ gert::git_status() |>
 
 # Adicionar arquivos ----
 
-gert::git_add(files = "git_comandos.R") |>
+gert::git_add(files = "confeccionar_mapas.R") |>
   as.data.frame()
 
 # Commit ----
 
-gert::git_commit(message = "Script para comandos de Git")
+gert::git_commit(message = "Exportar os mapas")
 
 # Push ----
 

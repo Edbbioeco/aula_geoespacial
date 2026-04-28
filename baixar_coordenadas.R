@@ -19,7 +19,15 @@ occ <- rgbif::occ_search(scientificName = "Rhinella diptycha",
 
 ## Data frame de registros -----
 
-registros <- occ$data
+registros <- occ$data |>
+  dplyr::mutate(decimalLatitude = decimalLatitude |>
+                  sp::dd2dms(NS = TRUE) |>
+                  as.character() |>
+                  stringr::str_replace("d", "°"),
+                decimalLongitude = decimalLongitude |>
+                  sp::dd2dms(NS = FALSE) |>
+                  as.character() |>
+                  stringr::str_replace("d", "°"))
 
 registros
 
