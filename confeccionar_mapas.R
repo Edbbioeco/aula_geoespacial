@@ -280,7 +280,7 @@ mapa2_2 <- ggplot() +
   geom_sf(data = rec,
           color = "red",
           fill = "transparent",
-          linewidth = 0.75) +
+          linewidth = 1) +
   geom_sf(data = uni_con_ne,
           aes(color = "Unidades de Conservação",
               fill = "Unidades de Conservação"),
