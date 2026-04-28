@@ -2,6 +2,10 @@
 
 library(rgbif)
 
+library(sp)
+
+library(tidyverse)
+
 library(writexl)
 
 # Coordenadas ----
