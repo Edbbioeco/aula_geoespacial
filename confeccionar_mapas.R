@@ -124,6 +124,10 @@ coord |> dplyr::glimpse()
 
 coord_sf <- coord |>
   dplyr::select(decimalLongitude, decimalLatitude) |>
+  dplyr::mutate(decimalLongitude = decimalLongitude |>
+                  parzer::parse_lon(),
+                decimalLatitude = decimalLatitude |>
+                  parzer::parse_lat()) |>
   sf::st_as_sf(coords = c("decimalLongitude", "decimalLatitude"),
                crs = regioes |> sf::st_crs())
 
